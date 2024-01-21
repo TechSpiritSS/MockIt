@@ -12,7 +12,6 @@
 
   align-items: center;
   justify-content: center;
-  font-family: Arial, sans-serif;
 }
 
 .company-logo {
@@ -33,8 +32,6 @@
   padding: 0px 10px;
   font-size: large;
   font-weight: bold;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
 }
 
 .jobs-container {

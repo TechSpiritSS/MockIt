@@ -198,7 +198,11 @@ function Chat() {
     <div className="App">
       <div
         className="header"
+        onClick={() => {
+          window.location.href = '/';
+        }}
         style={{
+          cursor: 'pointer',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',

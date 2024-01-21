@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import './NameInputComponent.css'; // Import your custom CSS for styling
+import './Intro.css';
 import { useUserId } from './context/userId';
 
 const Intro = () => {
@@ -69,13 +69,16 @@ const Intro = () => {
       <div className="container">
         <h1 className="intro">Welcome to MockIt</h1>
         <p className="intro-para">
-          Step into the world of MockIt, where intelligent conversations and
-          interactive experiences await. Embark on an innovative journey that
-          blurs the lines between human interaction and artificial intelligence.
-          Whether you're here to start a stimulating conversation or delve into
-          administration, your adventure begins by simply entering your name.
-          Let MockIt redefine your digital encounters – your next experience is
-          just a name away!
+          Welcome to MockIt, where interview preparation meets innovation.
+          Elevate your readiness for the job market with our cutting-edge AI
+          interview chatbot. Designed to simulate real-world interview
+          scenarios, MockIt offers a dynamic experience tailored to individual
+          job descriptions and user resumes. Embrace the power of technology as
+          MockIt guides you through realistic mock interviews, providing
+          valuable insights and feedback to sharpen your skills. Say goodbye to
+          conventional mock interviews; MockIt is your gateway to a new era of
+          personalized and challenging interview preparation. Are you ready to
+          revolutionize the way you prepare for success? Dive into MockIt today.
         </p>
         <h2 className="title">Enter Your Name</h2>
         <input

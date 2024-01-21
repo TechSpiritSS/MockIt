@@ -130,7 +130,7 @@ function PDFUpload() {
             <h2>Enter OpenAI API Key</h2>
             <form onSubmit={handleApiKeySubmit}>
               <input
-                type="text"
+                type="password"
                 placeholder="Enter API key..."
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
