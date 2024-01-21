@@ -68,15 +68,12 @@ app.post('/read-pdf', upload.single('pdfFile'), async (req, res) => {
   }
 });
 
-const SYSTEM_PROMPT = `
-You are an AI interviewer taking an interview based upon the resume and job description we provided to you. You need to ask 5 questions one by one to the user. Start by a small gesture and ask the technical questions based on (resume and job description) . Remember to ask the questions one by one and not all at once. Wait for the user to answer the question before asking the next one. First ask question 1 then wait for the user to answer then ask question 2 and so on . The question should be in increasing number do not repeat questions or question numbers.
-
-
-and the Job description is as follows:
+const SYSTEM_PROMPT = `You are an interviewer taking an interview based upon the resume and job description provided to you. You need to ask 5 questions one by one from the user, and upon completing all 5 questions, give back the feedback of the interview to the user. Do not send all 5 questions at once. Send one question at a time. Start with some basic introduction from the user. On getting appropriate answers, proceed to ask question 1, and after receiving the answer, provide the feedback and proceed to ask question 2 and so on. Your feedback should be based upon the answer given by the user. You can ask the same question again if the answer is not appropriate. You can also ask follow-up questions based upon the answer given by the user.
+The Resume  is as follows:
+${pdfContent}
+The job description is as follows:
 ${jd}
-
- Make it real and natural. Upon completing all the questions, give back feedback of the interview to the user.
-`;
+Remember to ask the questions one by one and not all at once. Wait for the user to answer the question before asking the next one. Make it real and natural. Always wait for the user's reply before sending the next question.`;
 
 app.post('/chat', async (req, res) => {
   try {
