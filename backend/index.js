@@ -28,8 +28,8 @@ const upload = multer();
 
 app.post('/update-jd', (req, res) => {
   try {
-    const newJD = req.body.text;
-    jd = newJD;
+    const { jobdesc } = req.body;
+    jd = JSON.stringify(jobdesc);
     console.log('Updated JD:', jd);
     res.status(200).json({ message: 'Job description updated successfully.' });
   } catch (error) {
@@ -38,18 +38,16 @@ app.post('/update-jd', (req, res) => {
   }
 });
 
-// Your existing POST request for handling PDF file upload
-app.post('/jobs', upload.single('pdfFile'), async (req, res) => {
-  try {
-    // job description
-    jd = textContent;
-    console.log('JD text content:', textContent);
-    res.status(200).json({ textContent });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error reading JD file.' });
-  }
-});
+// // Your existing POST request for handling PDF file upload
+// app.post('/jobs',  async (req, res) => {
+//   try {
+//     // job description
+//     const {jd} = req.body
+//     const jdString = JSON.stringify(jd)
+
+//     // add JD
+
+// });
 
 app.get('/', (req, res) => {
   res.send('Hello World!');

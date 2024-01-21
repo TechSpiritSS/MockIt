@@ -37,33 +37,39 @@ const Jobs = () => {
       [name]: type === 'checkbox' ? checked : value,
     }));
   };
-
   const jobsCall = async (jobdata) => {
-    const response = await fetch('http://localhost:8080/jobs', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(jobdata),
-    });
+    try {
+      // Parse the string into a JSON object
+      const parsedJobData = JSON.parse(jobdata);
 
-    if (response.ok) {
-      console.log('API call successful');
-    } else {
-      console.log('Failed to make API call');
+      const response = await fetch('http://localhost:8080/update-jd', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ jobdesc: parsedJobData }), // Wrap the parsed data in an object
+      });
+
+      if (response.ok) {
+        console.log('API call successful');
+      } else {
+        console.log('Failed to make API call');
+      }
+    } catch (error) {
+      console.error('Error parsing or making API call:', error);
     }
   };
 
   const handleClick = async (data) => {
     const promise = toast.promise(jobsCall(data), {
       loading: 'Loading...',
-      success: 'API call successful!',
-      error: 'Failed to make API call',
+      success: 'starting the mock interview',
+      error: 'Failed to start the mock interview',
     });
 
     try {
       await promise;
-      history(`/$chat?name=${encodeURIComponent(name)}`);
+      history(`/chat?name=${encodeURIComponent(name)}`);
     } catch (error) {
       console.error('API call failed:', error);
     }
