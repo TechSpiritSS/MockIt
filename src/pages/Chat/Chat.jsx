@@ -58,6 +58,7 @@ function Chat() {
     const newMessage = { content: inputValue, role: 'user' };
     setMessages([...messages, newMessage]); // add user content here
     setLoading(true);
+    setInputValue('');
 
     try {
       const response = await fetch(
@@ -210,13 +211,16 @@ function Chat() {
       >
         <div className="header-info">
           <img src="./logo.jpeg" alt="User Profile" className="profile-image" />
-          <div className="username">Querell AI</div>
+          <div className="username">Mock It</div>
         </div>
       </div>
       <div
         style={{
           display: 'flex',
           flexDirection: 'row',
+          justifyContent: 'space-evenly',
+          alignItems: 'center',
+          flexWrap: 'wrap',
         }}
       >
         <div>
