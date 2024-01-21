@@ -96,7 +96,7 @@ const Jobs = () => {
         {/* Jobs List */}
         {jobs.map((job) => (
           <div key={job.id} className="job-card">
-            <h2>
+            <h2 className="job-card-title">
               {job.image_url && (
                 <img
                   src={job.image_url}
@@ -104,7 +104,14 @@ const Jobs = () => {
                   className="company-logo"
                 />
               )}
-              <span>{job.title}</span> @ <span>{job.company}</span> -{' '}
+              <span>{job.title}</span> @{' '}
+              <span
+                style={{
+                  color: 'black',
+                }}
+              >
+                {job.company}
+              </span>
             </h2>
             <p className="job-description">
               {truncateDescription(job.description, 3)}

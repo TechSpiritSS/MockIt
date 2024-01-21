@@ -51,12 +51,18 @@
 }
 
 .job-card h2 {
+  display: flex;
   background-color: #3498db;
   color: #fff;
   padding: 12px;
   margin: 0;
   font-size: 1.5rem;
   border-bottom: 1px solid #2980b9;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
 }
 
 .job-card p {
