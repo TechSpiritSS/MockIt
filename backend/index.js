@@ -29,7 +29,7 @@ const upload = multer();
 app.post('/update-jd', (req, res) => {
   try {
     const { jobdesc } = req.body;
-    jd = JSON.stringify(jobdesc);
+    jd = jobdesc;
     console.log('Updated JD:', jd);
     res.status(200).json({ message: 'Job description updated successfully.' });
   } catch (error) {

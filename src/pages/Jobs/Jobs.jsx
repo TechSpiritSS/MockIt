@@ -39,15 +39,12 @@ const Jobs = () => {
   };
   const jobsCall = async (jobdata) => {
     try {
-      // Parse the string into a JSON object
-      const parsedJobData = JSON.parse(jobdata);
-
       const response = await fetch('http://localhost:8080/update-jd', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ jobdesc: parsedJobData }), // Wrap the parsed data in an object
+        body: JSON.stringify({ jobdesc: jobdata }),
       });
 
       if (response.ok) {
