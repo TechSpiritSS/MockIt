@@ -15,6 +15,7 @@ dotenv.config();
   
 let openai = null;
 let pdfContent = "";
+let jd = "";
 const port = process.env.PORT || 8080;
 
 app.use(express.json());
@@ -25,7 +26,30 @@ app.use(
 );
 const upload = multer();
 
+app.post("/update-jd", (req, res) => {
+  try {
+    const newJD = req.body.text;
+    jd = newJD;
+    console.log("Updated JD:", jd);
+    res.status(200).json({ message: "Job description updated successfully." });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error updating JD." });
+  }
+});
 
+// Your existing POST request for handling PDF file upload
+app.post("/jobs", upload.single("pdfFile"), async (req, res) => {
+  try {
+    // job description
+    jd = textContent;
+    console.log("JD text content:", textContent);
+    res.status(200).json({ textContent });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error reading JD file." });
+  }
+});
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -49,7 +73,7 @@ app.post("/read-pdf", upload.single("pdfFile"), async (req, res) => {
 const SYSTEM_PROMPT =
   "You are an interviewer taking an interview based upon the knowledge base provided to you. You need to ask 5 Questions one by one from the user and upon completeing all 5 questions give back the feedback of the Interview to the user. Do not send all 5 questions at once. Send one question at a time. Start with some basic introduction from the user. On getting appropiate answers, proceed to ask question 1 and after recieving the answer, provide the feedback and proceed to ask question 2 and so on. Your feedback should be based upon the answer given by the user. You can ask the same question again if the answer is not appropiate. You can also ask follow up questions based upon the answer given by the user. The knowledge base is as follows: \n\n" +
   pdfContent +
-  "\n\n\n\n\n\n\n\n" +
+  "\n\n\n\n\n\n\n\n" + jd
   "Remember to ask the questions one by one and not all at once, wait for the user to answer the question before asking the next one. Make it real and natural.Always wait for the user reply before sending the next question. \n\n\n";
 
 app.post("/chat", async (req, res) => {
