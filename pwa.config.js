@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'QuerellAI', // The name of your app
-  short_name: 'QuerellAI', // The short name of your app
+  name: 'MockIt', // The name of your app
+  short_name: 'MockIt', // The short name of your app
   theme_color: '#fff', // The theme color of your app
   background_color: '#fff', // The background color of your app
   display: 'standalone', // The display mode of your app

@@ -1,7 +1,11 @@
 {
     "name": "MockIt",
     "short_name": "MockIt",
-    "start_url": "/?home=true",
+    "theme_color": "#1976d2",
+    "background_color": "#fafafa",
+    "display": "standalone",
+    "scope": "./",
+    "start_url": "./",
     "icons": [
         {
             "src": "icons/icon-72x72.png",
@@ -51,9 +55,5 @@
             "type": "image/png",
             "purpose": "maskable any"
         }
-    ],
-    "theme_color": "#000000",
-    "background_color": "#ffffff",
-    "display": "fullscreen",
-    "orientation": "portrait"
+    ]
 }

@@ -67,15 +67,15 @@ const Intro = () => {
   return (
     <div className="main">
       <div className="container">
-        <h1 className="intro">Welcome to QuerellAI</h1>
+        <h1 className="intro">Welcome to MockIt</h1>
         <p className="intro-para">
-          Step into the world of QuerellAI, where intelligent conversations and
+          Step into the world of MockIt, where intelligent conversations and
           interactive experiences await. Embark on an innovative journey that
           blurs the lines between human interaction and artificial intelligence.
           Whether you're here to start a stimulating conversation or delve into
           administration, your adventure begins by simply entering your name.
-          Let QuerellAI redefine your digital encounters – your next experience
-          is just a name away!
+          Let MockIt redefine your digital encounters – your next experience is
+          just a name away!
         </p>
         <h2 className="title">Enter Your Name</h2>
         <input

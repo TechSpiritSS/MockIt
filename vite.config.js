@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 // const pwaPlugin = createPWA({
@@ -14,9 +14,9 @@ export default defineConfig({
       registerType: 'prompt',
       includeAssets: ['logo.jpeg'],
       manifest: {
-        name: 'PreChat',
-        short_name: 'querellai',
-        description: 'QuerellAI Application',
+        name: 'MockIt',
+        short_name: 'mockit',
+        description: 'MockIt Application',
         theme_color: '#ffffff',
         start_url: '/',
         icons: [
@@ -41,4 +41,3 @@ export default defineConfig({
     }),
   ],
 });
-
