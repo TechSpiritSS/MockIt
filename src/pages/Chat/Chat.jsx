@@ -62,8 +62,8 @@ function Chat() {
 
     try {
       const response = await fetch(
-        'http://localhost:8080/chat',
-        // "http://localhost:8080/chat",
+        'http://3.87.169.116:3000/chat',
+        // "http://3.87.169.116:3000/chat",
 
         {
           method: 'POST',
@@ -108,7 +108,7 @@ function Chat() {
 
   const fetchMsg = async (userId) => {
     try {
-      const response = await fetch('http://localhost:8080/content', {
+      const response = await fetch('http://3.87.169.116:3000/content', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ function Chat() {
   const storeMessage = () => {
     const sendMsg = async (userId) => {
       try {
-        const response = await fetch('http://localhost:8080/store', {
+        const response = await fetch('http://3.87.169.116:3000/store', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

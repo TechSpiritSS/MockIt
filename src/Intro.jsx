@@ -15,7 +15,7 @@ const Intro = () => {
 
   const createUser = async (name) => {
     try {
-      const response = await fetch('http://localhost:8080/createUser', {
+      const response = await fetch('http://3.87.169.116:3000/createUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

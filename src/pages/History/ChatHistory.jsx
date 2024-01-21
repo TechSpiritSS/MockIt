@@ -19,7 +19,7 @@ function ChatHistoryPage() {
       try {
         const fetchMsg = async () => {
           try {
-            const response = await fetch('http://localhost:8080/getAll');
+            const response = await fetch('http://3.87.169.116:3000/getAll');
 
             if (!response.ok) {
               throw new Error('Failed to create user');
