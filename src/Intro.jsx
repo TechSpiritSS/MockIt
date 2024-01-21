@@ -67,7 +67,10 @@ const Intro = () => {
   return (
     <div className="main">
       <div className="container">
-        <h1 className="intro">Welcome to MockIt</h1>
+        <h1 className="intro">
+          <img src="./logo.jpeg" alt="logo" className="logo" />
+          Welcome to MockIt
+        </h1>
         <p className="intro-para">
           Welcome to MockIt, where interview preparation meets innovation.
           Elevate your readiness for the job market with our cutting-edge AI

@@ -34,6 +34,13 @@
   font-size: 24px;
   margin-bottom: 20px;
 }
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 14px;
+}
 
 .input-field {
   padding: 10px;
@@ -58,8 +65,14 @@
   background-color: #0056b3;
 }
 .intro {
+  display: flex;
   font-size: 28px;
   margin-bottom: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro-para {
