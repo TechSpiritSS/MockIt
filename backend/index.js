@@ -104,32 +104,6 @@ app.post("/chat", async (req, res) => {
 });
 
 
-app.post("/jobs", async (req, res) => {
-  try {
-    const messages = req.body.messages || [];
-    messages.push({ role: "system", content: SYSTEM_PROMPT });
-    // client = OpenAI()
-    // const openai = new OpenAI();
-
-    const chat_completion = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: messages,
-    });
-
-    const botMessage = chat_completion.data.choices[0].message.content;
-
-    console.log(botMessage);
-
-    const responseData = {
-      botMessage: botMessage,
-    };
-
-    res.send(responseData);
-  } catch (error) {
-    console.error("Error in /chat endpoint:", error.message);
-    res.status(500).send("Internal Server Error");
-  }
-});
 
 
 app.post("/get-api-key", (req, res) => {
