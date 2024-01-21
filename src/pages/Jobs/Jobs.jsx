@@ -38,8 +38,24 @@ const Jobs = () => {
     }));
   };
 
-  const handleClick = async () => {
-    const promise = toast.promise(yourApiCallFunction(), {
+  const jobsCall = async (jobdata) => {
+    const response = await fetch('http://localhost:8080/jobs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(jobdata),
+    });
+
+    if (response.ok) {
+      console.log('API call successful');
+    } else {
+      console.log('Failed to make API call');
+    }
+  };
+
+  const handleClick = async (data) => {
+    const promise = toast.promise(jobsCall(data), {
       loading: 'Loading...',
       success: 'API call successful!',
       error: 'Failed to make API call',
@@ -120,7 +136,9 @@ const Jobs = () => {
               <a href={job.url} target="_blank" rel="noopener noreferrer">
                 Apply for the job
               </a>
-              <button onClick={handleClick}>Mock Interview</button>
+              <button onClick={() => handleClick(job.description)}>
+                Mock Interview
+              </button>
             </div>
           </div>
         ))}
