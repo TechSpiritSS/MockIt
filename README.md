@@ -10,7 +10,8 @@ Welcome to Mock It Interviewer, an advanced chatbot powered by the formidable Op
 
 https://youtu.be/VgGU4KR45sk
 
-**AWS Amplify Deployed Link 👇👇**
+**AWS EC2 Backend Deployed Link 👇👇**
+
 https://mock-it-two.vercel.app/
 
 ## Features
@@ -38,13 +39,12 @@ https://mock-it-two.vercel.app/
 
 - Node.js: Backend server for handling API requests and business logic.
 - React.js: Frontend framework for building the user interface.
-- Google Cloud Functions: Serverless function deployment for scalable backend services.
 - Docker: Containerization technology for easy deployment and management.
 - PostgreSQL: Object-Relational Database for data management and storage.
 - NeonDB: Incorporating NeonDB for enhanced data management capabilities.
 - Prisma: Modern database toolkit for ORM and query building.
 - OpenAI API: Powering the advanced chatbot capabilities, providing a seamless interview experience.
-- AWS Amplify: Hosting static site (Frontend/Client Deployement).
+- AWS EC2: Hosting backend server.
 
 ## Getting Started
 
@@ -63,22 +63,10 @@ npm run dev
 - Then input the admin password as "AdminOnly1234".
 - Upload your API key and PDF for smooth operation.
 
-1. Clone the repository: `git clone https://github.com/your-username/reactnode-ai-interviewer.git`
+1. Clone the repository: `git clone https://github.com/techspiritss/mockit.git`
 2. Install the required dependencies: `npm install`
 3. Run the application: `npm start`
 4. Access the ReactNode AI Interviewer at `http://localhost:3000`
-
-## Docker Deployment
-
-This project is also Dockerized, allowing easy deployment in containers. To run the application using Docker, follow these steps:
-
-1. Make sure you have Docker installed and running on your system.
-2. Build the Docker image: `docker build -t reactnode-ai-interviewer .`
-3. Run the Docker container: `docker run -p 3000:3000 reactnode-ai-interviewer`
-
-## Deployed on Google Cloud Functions
-
-The backend Node.js code has been deployed on Google Cloud Functions to provide a scalable and serverless environment. The Docker container is used to deploy the application on Google Cloud Functions.
 
 ## Future Features Plans
 
