@@ -15,15 +15,18 @@ const Intro = () => {
 
   const createUser = async (name) => {
     try {
-      const response = await fetch('http://3.87.169.116:3000/createUser', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          userName: name,
-        }),
-      });
+      const response = await fetch(
+        'https://mock-it-two.vercel.app/createUser',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            userName: name,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error('Failed to create user');

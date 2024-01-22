@@ -39,7 +39,7 @@ const Jobs = () => {
   };
   const jobsCall = async (jobdata) => {
     try {
-      const response = await fetch('http://3.87.169.116:3000/update-jd', {
+      const response = await fetch('https://mock-it-two.vercel.app/update-jd', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

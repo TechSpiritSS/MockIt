@@ -11,7 +11,8 @@ Welcome to Mock It Interviewer, an advanced chatbot powered by the formidable Op
 https://youtu.be/VgGU4KR45sk
 
 **AWS Amplify Deployed Link 👇👇**
-http://3.87.169.116:3000/
+https://mock-it-two.vercel.app/
+
 ## Features
 
 - **Seamless React & Node.js Assessments:** Conduct tech interviews with a focus on React and Node.js domains, evaluating candidates' proficiency and coding skills with precision.

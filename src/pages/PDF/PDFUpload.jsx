@@ -18,8 +18,8 @@ function PDFUpload() {
     if (apiKey) {
       try {
         const response = await fetch(
-          'http://3.87.169.116:3000/get-api-key',
-          // "http://3.87.169.116:3000/get-api-key",
+          'https://mock-it-two.vercel.app/get-api-key',
+          // "https://mock-it-two.vercel.app/get-api-key",
 
           {
             method: 'POST',
@@ -66,8 +66,8 @@ function PDFUpload() {
         formData.append('pdfFile', selectedFile);
 
         const response = await fetch(
-          'http://3.87.169.116:3000/read-pdf',
-          // "http://3.87.169.116:3000/read-pdf",
+          'https://mock-it-two.vercel.app/read-pdf',
+          // "https://mock-it-two.vercel.app/read-pdf",
 
           {
             method: 'POST',
